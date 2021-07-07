@@ -219,7 +219,7 @@ theme.loadTreeSitter = function ()
         TSAttribute =               { fg = calvera.yellow }, -- (unstable) TODO: docs
         TSBoolean=                  { fg = calvera.orange }, -- For booleans.
         TSCharacter=                { fg = calvera.orange }, -- For characters.
-        TSConstructor =             { fg = calvera.yellow }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+        TSConstructor =             { fg = calvera.paleblue }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
         TSConstant =                { fg = calvera.yellow }, -- For constants
         TSConstBuiltin =            { fg = calvera.blue }, -- For constant that are built in the language: `nil` in Lua.
 		TSConstMacro =              { fg = calvera.blue }, -- For constants that are defined by macros: `NULL` in C.
