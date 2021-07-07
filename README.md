@@ -21,13 +21,20 @@ Requirements: Neovim 0.5
 Enable the color scheme:
 ```vim
 "Vim-Script:
+-- Optional Settings 
+let g:calvera_italic_comments = 1
+let g:calvera_italic_keywords = 1
+let g:calvera_italic_functions = 1
+let g:calvera_contrast = 1
+
+-- Required
 colorscheme calvera
 ```
 
 ```lua
 --Lua:
 
--- Example Configuration
+-- Optional Example Configuration
 vim.g.calvera_italic_keywords = false
 vim.g.calvera_borders = true
 vim.g.calvera_contrast = true
@@ -39,6 +46,8 @@ require('calvera').set()
 ```
 
 For more optional settings see the [Options Section](#options)
+Note: The order matters, make sure to place the optional configuration
+above the initialization.
 
 ## Info
 
