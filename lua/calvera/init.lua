@@ -10,10 +10,10 @@
 --       \:\__\        \::/  /
 --        \/__/         \/__/
 --
--- Colorscheme name:        material.nvim
--- Description:             Colorscheme for NeoVim based on the material pallete
--- Author:                  Marko Cerovac <marko.cerovac16@gmail.com>
--- Website:                 https://github.com/marko-cerovac/material.nvim
+-- Colorscheme name:        clavera-dark.nvim
+-- Description:             Colorscheme for NeoVim based on the calvera pallete
+-- Author:                  Yash Gupta <yashguptaz@protonmail.com>
+-- Website:                 https://github.com/yashguptaz/calvera-dark.nvim
 local util = require('calvera.util')
 
 -- Load the theme

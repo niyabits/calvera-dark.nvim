@@ -1,5 +1,5 @@
 local util = {}
-local material = require('calvera.theme')
+local calvera = require('calvera.theme')
 
 -- Go trough the table and highlight the group with the color values
 util.highlight = function(group, color)
@@ -21,16 +21,16 @@ end
 -- Only define Calvera if it's the active colorshceme
 function util.onColorScheme()
     if vim.g.colors_name ~= "calvera" then
-        vim.cmd [[autocmd! Material]]
-        vim.cmd [[augroup! Material]]
+        vim.cmd [[autocmd! Calvera]]
+        vim.cmd [[augroup! Calvera]]
     end
 end
 
 -- Change the background for the terminal and packer windows
 util.contrast = function()
-    vim.cmd [[augroup Material]]
+    vim.cmd [[augroup Calvera]]
     vim.cmd [[  autocmd!]]
-    vim.cmd [[  autocmd ColorScheme * lua require("material.util").onColorScheme()]]
+    vim.cmd [[  autocmd ColorScheme * lua require("calvera.util").onColorScheme()]]
     vim.cmd [[  autocmd TermOpen * setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
     vim.cmd [[  autocmd FileType packer setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
     vim.cmd [[  autocmd FileType qf setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
@@ -49,26 +49,26 @@ function util.load()
     -- Load plugins and lsp async
     local async
     async = vim.loop.new_async(vim.schedule_wrap(function()
-        material.loadTerminal()
+        calvera.loadTerminal()
 
         -- imort tables for plugins and lsp
-        local plugins = material.loadPlugins()
-        local lsp = material.loadLSP()
+        local plugins = calvera.loadPlugins()
+        local lsp = calvera.loadLSP()
 
         for group, colors in pairs(plugins) do
             util.highlight(group, colors)
         end
 
         for group, colors in pairs(lsp) do util.highlight(group, colors) end
-        if vim.g.material_contrast == true then util.contrast() end
+        if vim.g.calvera_contrast == true then util.contrast() end
         async:close()
 
     end))
 
     -- load base theme
-    local editor = material.loadEditor()
-    local syntax = material.loadSyntax()
-    local treesitter = material.loadTreeSitter()
+    local editor = calvera.loadEditor()
+    local syntax = calvera.loadSyntax()
+    local treesitter = calvera.loadTreeSitter()
 
     for group, colors in pairs(editor) do util.highlight(group, colors) end
 

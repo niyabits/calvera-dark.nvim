@@ -1,10 +1,50 @@
-# Calvera Dark.nvim
+# 🌌 Calvera Dark.nvim
+
+![Calvera Dark](./media/Calvera_Dark_Home.jpg)
+## ⚓ Installation
+
+Install via your favorite package manager:
+```vim
+" If you are using Vim-Plug
+Plug 'yashguptaz/calvera-dark.nvim'
+```
+
+```lua
+-- If you are using Packer
+use 'yashguptaz/calvera-dark.nvim'
+```
+
+Requirements: Neovim 0.5
+
+## 🌌 Usage
+
+Enable the color scheme:
+```vim
+"Vim-Script:
+colorscheme calvera
+```
+
+```lua
+--Lua:
+
+-- Example Configuration
+vim.g.calvera_italic_keywords = false
+vim.g.calvera_borders = true
+vim.g.calvera_contrast = true
+vim.g.calvera_hide_eob = true
+vim.g.calvera_custom_colors = {contrast = "#0f111a"}
+
+-- Required Setting
+require('calvera').set()
+```
+
+For more optional settings see the [Options Section](#options)
 
 ## Info
-A port of [Calvera Dark](https://github.com/saurabhdaware/vscode-calvera-dark) colorscheme for NeoVim written in Lua
 
-Calvera Dark.nvim is meant to be a fast and modern colorscheme written in Lua that supports a lot of the new features
-added to NeoVim like built-in LSP and [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
+Calvera Dark is a modern and blazing fast Neovim theme.
+
+A port of [Calvera Dark](https://github.com/saurabhdaware/vscode-calvera-dark) colorscheme for Neovim written in Lua.
 
 ## ✨ Features
 + Supported plugins:
@@ -34,37 +74,7 @@ added to NeoVim like built-in LSP and [TreeSitter](https://github.com/nvim-trees
 
 + Asynchronous highlight loading which makes the theme extremely fast
 
-+ Added functions for live theme switching without the need to restart NeoVim
-
-## ⚡️ Requirements
-
-+ Neovim >= 0.5.0
-
-## ⚓ Installation
-
-Install via your favourite package manager:
-```vim
-" If you are using Vim-Plug
-Plug 'yashguptaz/calvera-dark.nvim'
-```
-
-```lua
--- If you are using Packer
-use 'yashguptaz/calvera-dark.nvim'
-```
-
-## 🐬 Usage
-
-Enable the colorscheme:
-```vim
-"Vim-Script:
-colorscheme calvera
-```
-
-```lua
---Lua:
-require('calvera').set()
-```
++ Lualine
 
 To enable the `calvera-nvim` theme for `Lualine`, simply specify it in your lualine settings:
 ( make sure to set the theme to 'calvera-nvim', as 'calvera' already exists built in to lualine)
@@ -79,6 +89,8 @@ require('lualine').setup {
 }
 ```
 
+## Options
+
 | Option                              | Default     | Description                                                                                      |
 | ----------------------------------- | ----------- | ------------------------------------------------------------------------------------------------ |
 | calvera_contrast                    | `true`      | Make sidebars and popup menus like nvim-tree and telescope have a different background           |
@@ -92,6 +104,8 @@ require('lualine').setup {
 | calvera_hide_eob                    | `false`     | Hide the end of buffer lines ( ~ )                                                               |
 | calvera_variable_color              | `#717CB4`   | Set a custom color for variables and fields                                                      |
 | calvera_custom_colors               |    {}       | Override the default colors and use your own                                                     |
+
+
 
 ```lua
 -- Example config in lua
@@ -109,6 +123,8 @@ vim.g.calvera_disable_background = false
 require('calvera').set()
 ```
 
+
+
 ```vim
 " Example config in Vim-Script
 let g:calvera_italic_comments = 1
@@ -122,9 +138,8 @@ colorscheme calvera
 
 ## ⛵ Functions
 
-+ Toggle the style live without the need to exit NeoVim
-
 + Toggle the end of buffer lines ( ~ )
+
 
 Call the built in function for toggling buffer lines
 
@@ -141,27 +156,25 @@ The command can also be mapped to a key to toggle the lines live
 nnoremap <leader>me :lua require('calvera.functions').toggle_eob()<CR>
 ```
 
+
+
 ```lua
 --Lua:
 vim.api.nvim_set_keymap('n', '<leader>me', [[<Cmd>lua require('calvera.functions').toggle_eob()<CR>]], { noremap = true, silent = true })
 ```
 
-+ Change the style to a desired one using the function change_style("desired style")
-```vim
-"Vim-Script:
-:lua require('calvera.functions').change_style("palenight")
-"This command changes the style to palenight
+## Development
+
+In the plugin folder use the command below to open neovim
+
+```
+nvim --cmd "set rtp+=."
 ```
 
-The command can also be mapped to a key for fast style switching
-```vim
-"Vim-Script:
-nnoremap <leader>ml :lua require('calvera.functions').change_style('lighter')<CR>
-nnoremap <leader>md :lua require('calvera.functions').change_style('darker')<CR>
-```
+Source the `dev/dev.lua` file with the command `:luafile %` every time you make a change. 
 
-```lua
---Lua:
-vim.api.nvim_set_keymap('n', '<leader>ml', [[<Cmd>lua require('calvera.functions').change_style('lighter')<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>md', [[<Cmd>lua require('calvera.functions').change_style('darker')<CR>]], { noremap = true, silent = true })
-```
+## Acknowledgement
+
+[Material.nvim](https://github.com/marko-cerovac/material.nvim) - Material.nvim was used as a starting point for this color theme.
+
+[VSCode Calvera Dark](https://github.com/saurabhdaware/vscode-calvera-dark) - VSCode Calvera Dark was used to pick the colors

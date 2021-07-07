@@ -1,16 +1,15 @@
 -- LuaFormatter off
 local calvera = {
 	-- Common colors
-
-	white    =		'#EEFFFF',
+	white    =		'#FFFFFF',
 	gray     =      '#717CB4',
 	black    = 		'#000000',
-	red      =   	'#F07178',
+	red      =   	'#E97A7A',
 	green    = 		'#ADCEA1',
-	yellow   =		'#FFCB6B',
+	yellow   =		'#D6B295',
 	blue     =  	'#82AAFF',
-	paleblue =		'#B0C9FF',
-	cyan     =  	'#89DDFF',
+	paleblue =		'#AAB4EC',
+	cyan     =  	'#7878E7',
 	purple   =		'#C792EA',
 	orange   =		'#F78C6C',
 	pink     =  	'#FF9CAC',
@@ -26,55 +25,57 @@ local calvera = {
 
 -- Darker theme style
 
+
 calvera.bg =			'#0c0c1f'
 calvera.bg_alt =		'#0c0c1f'
 calvera.fg =			'#B0BEC5'
-calvera.text =			'#727272'
+calvera.text =			'#9797D6'
 calvera.comments =		'#333362'
 calvera.selection = 	'#17173d'
-calvera.contrast =		'#1A1A1A'
+calvera.contrast =		'#0a0a1a'
 calvera.active =		'#121230'
-calvera.border =		'#292929'
+calvera.border =		'#29295f'
 calvera.line_numbers =	'#1c1c3a'
 calvera.highlight =		'#373777'
 calvera.disabled =		'#474747'
 calvera.accent =		'#373777'
 
--- Optional colors
 calvera.indentHlDefault ='#2a2a57'
 calvera.indentHlContext ='#5050b9'
+calvera.popupbg = '#1c1c42'
+calvera.popupbgActive = '#29294e'
+calvera.refTextBg = '#03385B'
+calvera.refTextFg = '#AAAFDF'
+calvera.nvimTreeTxt = '#474775'
+-- Optional colors
 
 -- LuaFormatter on
 
 -- Enable contrast sidebars, floating windows and popup menus
-if vim.g.material_contrast == false then
+if vim.g.calvera_contrast == false then
     calvera.sidebar = calvera.bg
     calvera.float = calvera.bg
 else
-    calvera.sidebar = calvera.bg_alt
-    calvera.float = calvera.bg_alt
+    calvera.sidebar = calvera.contrast
+    calvera.float = calvera.bg
 end
 
 -- Enable custom variable colors
-if vim.g.material_variable_color == nil then
-    calvera.variable = calvera.gray
+if vim.g.calvera_variable_color == nil then
+    calvera.variable = calvera.paleblue
 else
-    calvera.variable = vim.g.material_variable_color
+    calvera.variable = vim.g.calvera_variable_color
 end
 
 -- Set black titles for lighter style
-if vim.g.material_style == 'lighter' then
-    calvera.title = calvera.black
-else
-    calvera.title = calvera.white
-end
+calvera.title = '#474775'
 
 -- Apply user defined colors
 
--- Check if vim.g.material_custom_colors = is a table
-if type(vim.g.material_custom_colors) == "table" then
+-- Check if vim.g.calvera_custom_colors = is a table
+if type(vim.g.calvera_custom_colors) == "table" then
     -- Iterate trough the table
-    for key, value in pairs(vim.g.material_custom_colors) do
+    for key, value in pairs(vim.g.calvera_custom_colors) do
         -- If the key doesn't exist:
         if not calvera[key] then
             error("Color " .. key .. " does not exist")

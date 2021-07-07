@@ -54,14 +54,14 @@ theme.loadSyntax = function()
 	-- Options:
 
 	-- Italic comments
-	if vim.g.material_italic_comments == true then
+	if vim.g.calvera_italic_comments == true then
 		syntax.Comment =		{fg = calvera.comments, bg = calvera.none, style = 'italic'} -- italic comments
 	else
 		syntax.Comment =		{fg = calvera.comments} -- normal comments
 	end
 
 	-- Italic Keywords
-	if vim.g.material_italic_keywords == true then
+	if vim.g.calvera_italic_keywords == true then
 		syntax.Conditional =		{fg = calvera.purple, bg = calvera.none, style = 'italic'} -- italic if, then, else, endif, switch, etc.
 		syntax.Keyword =			{fg = calvera.purple, bg = calvera.none, style = 'italic'} -- italic for, do, while, etc.
 		syntax.Repeat =				{fg = calvera.purple, bg = calvera.none, style = 'italic'} -- italic any other keyword
@@ -72,13 +72,13 @@ theme.loadSyntax = function()
 	end
 
 	-- Italic Function names
-	if vim.g.material_italic_functions == true then
+	if vim.g.calvera_italic_functions == true then
 		syntax.Function =		{fg = calvera.blue, bg = calvera.none, style = 'italic'} -- italic funtion names
 	else
 		syntax.Function =		{fg = calvera.blue} -- normal function names
 	end
 
-	if vim.g.material_italic_variables == true then
+	if vim.g.calvera_italic_variables == true then
 		syntax.Identifier =		{fg = calvera.variable, bg = calvera.none, style = 'italic'}; -- any variable name
 	else
 		syntax.Identifier =		{fg = calvera.variable}; -- any variable name
@@ -113,8 +113,8 @@ theme.loadEditor = function ()
 		ModeMsg =				{ fg = calvera.accent }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MoreMsg =				{ fg = calvera.accent }, -- |more-prompt|
 		NonText =				{ fg = calvera.disabled }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		Pmenu =					{ fg = calvera.text, bg = calvera.contrast }, -- Popup menu: normal item.
-		PmenuSel =				{ fg = calvera.accent, bg = calvera.active, style = 'italic' }, -- Popup menu: selected item.
+		Pmenu =					{ fg = calvera.text, bg = calvera.popupbg }, -- Popup menu: normal item.
+		PmenuSel =				{ fg = calvera.text, bg = calvera.active }, -- Popup menu: selected item.
 		PmenuSbar =				{ fg = calvera.text, bg = calvera.contrast }, -- Popup menu: scrollbar.
 		PmenuThumb =			{ fg = calvera.fg, bg = calvera.border }, -- Popup menu: Thumb of the scrollbar.
 		Question =				{ fg = calvera.green }, -- |hit-enter| prompt and yes/no questions
@@ -141,8 +141,8 @@ theme.loadEditor = function ()
 		WildMenu =				{ fg = calvera.orange, bg = calvera.none, style = 'bold' }, -- current match in 'wildmenu' completion
 		CursorColumn =			{ fg = calvera.none, bg = calvera.active }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
 		CursorLine =			{ fg = calvera.none, bg = calvera.active }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-		-- ToolbarLine =			{ fg = material.fg, bg = material.bg_alt },
-		-- ToolbarButton =			{ fg = material.fg, bg = material.none, style = 'bold' },
+		-- ToolbarLine =			{ fg = calvera.fg, bg = calvera.bg_alt },
+		-- ToolbarButton =			{ fg = calvera.fg, bg = calvera.none, style = 'bold' },
 		NormalMode =			{ fg = calvera.accent, bg = calvera.none, style = 'reverse' }, -- Normal mode message in the cmdline
 		InsertMode =			{ fg = calvera.green, bg = calvera.none, style = 'reverse' }, -- Insert mode message in the cmdline
 		ReplacelMode =			{ fg = calvera.red, bg = calvera.none, style = 'reverse' }, -- Replace mode message in the cmdline
@@ -157,15 +157,15 @@ theme.loadEditor = function ()
         -- Dashboard
         DashboardShortCut =                     { fg = calvera.red },
         DashboardHeader =                       { fg = calvera.comments },
-        DashboardCenter =                       { fg = calvera.accent },
-        DashboardFooter =                       { fg = calvera.green, style = "italic" },
+        DashboardCenter =                       { fg = calvera.paleblue },
+        DashboardFooter =                       { fg = calvera.orange, style = "italic" },
 
 	}
 
     -- Options:
 
     --Set transparent background
-    if vim.g.material_disable_background == true then
+    if vim.g.calvera_disable_background == true then
 		editor.Normal =				{ fg = calvera.fg, bg = calvera.none } -- normal text and background color
 		editor.SignColumn =			{ fg = calvera.fg, bg = calvera.none }
     else
@@ -174,14 +174,14 @@ theme.loadEditor = function ()
     end
 
     -- Remove window split borders
-    if vim.g.material_borders == true then
+    if vim.g.calvera_borders == true then
 		editor.VertSplit =				{ fg = calvera.border } -- the column separating vertically split windows
     else
 		editor.VertSplit =				{ fg = calvera.bg } -- the column separating vertically split windows
     end
 
     --Set End of Buffer lines (~)
-    if vim.g.material_hide_eob == true then
+    if vim.g.calvera_hide_eob == true then
 		editor.EndOfBuffer =			{ fg = calvera.bg } -- ~ lines at the end of a buffer
     else
 		editor.EndOfBuffer =			{ fg = calvera.disabled } -- ~ lines at the end of a buffer
@@ -219,10 +219,10 @@ theme.loadTreeSitter = function ()
         TSAttribute =               { fg = calvera.yellow }, -- (unstable) TODO: docs
         TSBoolean=                  { fg = calvera.orange }, -- For booleans.
         TSCharacter=                { fg = calvera.orange }, -- For characters.
-        TSConstructor =             { fg = calvera.purple }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+        TSConstructor =             { fg = calvera.yellow }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
         TSConstant =                { fg = calvera.yellow }, -- For constants
         TSConstBuiltin =            { fg = calvera.blue }, -- For constant that are built in the language: `nil` in Lua.
-        TSConstMacro =              { fg = calvera.blue }, -- For constants that are defined by macros: `NULL` in C.
+		TSConstMacro =              { fg = calvera.blue }, -- For constants that are defined by macros: `NULL` in C.
         TSError =                   { fg = calvera.error }, -- For syntax/parser errors.
         TSException =               { fg = calvera.red }, -- For exception related keywords.
         TSField =                   { fg = calvera.variable }, -- For fields.
@@ -230,9 +230,9 @@ theme.loadTreeSitter = function ()
         TSFuncMacro =               { fg = calvera.blue }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
         TSInclude =                 { fg = calvera.cyan }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
         TSLabel =                   { fg = calvera.red }, -- For labels: `label:` in C and `:label:` in Lua.
-        TSNamespace =               { fg = calvera.yellow }, -- For identifiers referring to modules and namespaces.
+        TSNamespace =               { fg = calvera.paleblue }, -- For identifiers referring to modules and namespaces.
         TSNumber =                  { fg = calvera.orange }, -- For all numbers
-        TSOperator =                { fg = calvera.cyan }, -- For any operator: `+`, but also `->` and `*` in C.
+        TSOperator =                { fg = calvera.yellow }, -- For any operator: `+`, but also `->` and `*` in C.
         TSParameter =               { fg = calvera.paleblue }, -- For parameters of a function.
         TSParameterReference=       { fg = calvera.paleblue }, -- For references to parameters of a function.
         TSProperty =                { fg = calvera.paleblue }, -- Same as `TSField`,accesing for struct members in C.
@@ -243,7 +243,7 @@ theme.loadTreeSitter = function ()
         TSStringRegex =             { fg = calvera.blue }, -- For regexes.
         TSStringEscape =            { fg = calvera.disabled }, -- For escape characters within a string.
         TSSymbol =                  { fg = calvera.yellow }, -- For identifiers referring to symbols or atoms.
-        TSType =                    { fg = calvera.purple }, -- For types.
+        TSType =                    { fg = calvera.yellow }, -- For types.
         TSTypeBuiltin =             { fg = calvera.purple }, -- For builtin types.
         TSTag =                     { fg = calvera.red }, -- Tags like html tag names.
         TSTagDelimiter =            { fg = calvera.cyan }, -- Tag delimiter like `<` `>` `/`
@@ -261,15 +261,15 @@ theme.loadTreeSitter = function ()
     -- Options:
 
     -- Italic comments
-    if vim.g.material_italic_comments == true then
+    if vim.g.calvera_italic_comments == true then
         treesitter.TSComment=                  { fg = calvera.comments , bg = calvera.none, style = 'italic' } -- For comment blocks.
     else
         treesitter.TSComment=                  { fg = calvera.comments } -- For comment blocks.
     end
 
-    if vim.g.material_italic_keywords == true then
+    if vim.g.calvera_italic_keywords == true then
         treesitter.TSConditional =             { fg = calvera.purple, style = 'italic' } -- For keywords related to conditionnals.
-        treesitter.TSKeyword =                 { fg = calvera.yellow, style = 'italic' } -- For keywords that don't fall in previous categories.
+        treesitter.TSKeyword =                 { fg = calvera.cyan  , style = 'italic' } -- For keywords that don't fall in previous categories.
         treesitter.TSRepeat =                  { fg = calvera.purple, style = 'italic' } -- For keywords related to loops.
         treesitter.TSKeywordFunction =         { fg = calvera.purple, style = 'italic' } -- For keywords used to define a fuction.
     else
@@ -279,7 +279,7 @@ theme.loadTreeSitter = function ()
         treesitter.TSKeywordFunction =         { fg = calvera.purple } -- For keywords used to define a fuction.
     end
 
-    if vim.g.material_italic_functions == true then
+    if vim.g.calvera_italic_functions == true then
         treesitter.TSFunction =                { fg = calvera.blue, style = 'italic' } -- For fuction (calls and definitions).
         treesitter.TSMethod =                  { fg = calvera.blue, style = 'italic' } -- For method calls and definitions.
         treesitter.TSFuncBuiltin =             { fg = calvera.cyan, style = 'italic' } -- For builtin functions: `table.insert` in Lua.
@@ -289,7 +289,7 @@ theme.loadTreeSitter = function ()
         treesitter.TSFuncBuiltin =             { fg = calvera.cyan } -- For builtin functions: `table.insert` in Lua.
     end
 
-    if vim.g.material_italic_variables == true then
+    if vim.g.calvera_italic_variables == true then
         treesitter.TSVariable =                { fg = calvera.variable, style = 'italic' } -- Any variable name that does not have another highlight.
         treesitter.TSVariableBuiltin =         { fg = calvera.variable, style = 'italic' } -- Variable names that are defined by the languages, like `this` or `self`.
     else
@@ -325,9 +325,9 @@ theme.loadLSP = function ()
         LspDiagnosticsFloatingHint =            { fg = calvera.purple  }, -- used for "Hint" diagnostic messages in the diagnostics float
         LspDiagnosticsVirtualTextHint =         { fg = calvera.purple  }, -- Virtual text "Hint"
         LspDiagnosticsUnderlineHint =           { style = 'undercurl', sp = calvera.paleblue }, -- used to underline "Hint" diagnostics.
-        LspReferenceText =                      { fg = calvera.accent, bg = calvera.highlight }, -- used for highlighting "text" references
-        LspReferenceRead =                      { fg = calvera.accent, bg = calvera.highlight }, -- used for highlighting "read" references
-        LspReferenceWrite =                     { fg = calvera.accent, bg = calvera.highlight }, -- used for highlighting "write" references
+        LspReferenceText =                      { fg = calvera.refTextFg, bg = calvera.refTextBg }, -- used for highlighting "text" references
+        LspReferenceRead =                      { fg = calvera.refTextFg, bg = calvera.refTextBg }, -- used for highlighting "read" references
+        LspReferenceWrite =                     { fg = calvera.refTextFg, bg = calvera.refTextBg }, -- used for highlighting "write" references
     }
 
     return lsp
@@ -392,12 +392,12 @@ theme.loadPlugins = function()
         TelescopeMatching =                     { fg = calvera.cyan },
 
         -- NvimTree
-        NvimTreeRootFolder =                    { fg = calvera.title, style = "italic" },
+        NvimTreeRootFolder =                    { fg = calvera.nvimTreeTxt },
         NvimTreeFolderName=                     { fg = calvera.text },
         NvimTreeFolderIcon=                     { fg = calvera.accent },
         NvimTreeEmptyFolderName=                { fg = calvera.disabled },
-        NvimTreeOpenedFolderName=               { fg = calvera.accent, style = "italic" },
-        NvimTreeIndentMarker =                  { fg = calvera.disabled },
+        NvimTreeOpenedFolderName=               { fg = calvera.accent },
+        NvimTreeIndentMarker =                  { fg = calvera.border },
         NvimTreeGitDirty =                      { fg = calvera.blue },
         NvimTreeGitNew =                        { fg = calvera.green },
         NvimTreeGitStaged =                     { fg = calvera.comments },
@@ -445,7 +445,7 @@ theme.loadPlugins = function()
 		LspSagaCodeActionTruncateLine =			{ fg = calvera.border },
         LspSagaSignatureHelpBorder =            { fg = calvera.pink },
         LspSagaFinderSelection =                { fg = calvera.green },
-		-- LspSagaAutoPreview =					{ fg = material.red },
+		-- LspSagaAutoPreview =					{ fg = calvera.red },
         ReferencesCount =                       { fg = calvera.purple },
         DefinitionCount =                       { fg = calvera.purple },
 		DefinitionPreviewTitle =				{ fg = calvera.green },
@@ -476,7 +476,7 @@ theme.loadPlugins = function()
     -- Options:
 
     -- Disable nvim-tree background
-        if vim.g.material_disable_background == true then
+        if vim.g.calvera_disable_background == true then
             plugins.NvimTreeNormal =                        { fg = calvera.comments, bg = calvera.none }
         else
             plugins.NvimTreeNormal =                        { fg = calvera.comments, bg = calvera.sidebar }
