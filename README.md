@@ -1,7 +1,7 @@
-# 🌌 Calvera Dark.nvim
+# <img src="https://raw.githubusercontent.com/saurabhdaware/vscode-calvera-dark/main/images/milky-way-icon.png" width="40"> Calvera Dark.nvim
 
 ![Calvera Dark](./media/Calvera_Dark_Home.jpg)
-## ⚓ Installation
+## Installation
 
 Install via your favorite package manager:
 ```vim
@@ -136,7 +136,7 @@ let g:calvera_contrast = 1
 colorscheme calvera
 ```
 
-## ⛵ Functions
+## Functions
 
 + Toggle the end of buffer lines ( ~ )
 
