@@ -13,7 +13,7 @@ theme.loadSyntax = function()
 		Constant =					{ fg = calvera.yellow }, -- any constant
 		String =					{ fg = calvera.green, bg = calvera.none, style= 'italic' }, -- Any string
 		Character =					{ fg = calvera.orange }, -- any character constant: 'c', '\n'
-		Number =					{ fg = calvera.orange }, -- a number constant: 5
+		Number =					{ fg = calvera.yellow }, -- a number constant: 5
 		Boolean =					{ fg = calvera.orange }, -- a boolean constant: TRUE, false
 		Float =						{ fg = calvera.orange }, -- a floating point constant: 2.3e10
 		Statement =					{ fg = calvera.pink }, -- any statement
