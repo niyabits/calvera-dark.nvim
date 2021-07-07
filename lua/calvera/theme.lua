@@ -274,7 +274,7 @@ theme.loadTreeSitter = function ()
         treesitter.TSKeywordFunction =         { fg = calvera.purple, style = 'italic' } -- For keywords used to define a fuction.
     else
         treesitter.TSConditional =             { fg = calvera.purple } -- For keywords related to conditionnals.
-        treesitter.TSKeyword =                 { fg = calvera.yellow } -- For keywords that don't fall in previous categories.
+        treesitter.TSKeyword =                 { fg = calvera.cyan } -- For keywords that don't fall in previous categories.
         treesitter.TSRepeat =                  { fg = calvera.purple } -- For keywords related to loops.
         treesitter.TSKeywordFunction =         { fg = calvera.purple } -- For keywords used to define a fuction.
     end
