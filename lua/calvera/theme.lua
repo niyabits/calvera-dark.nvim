@@ -106,7 +106,7 @@ theme.loadEditor = function ()
 		ErrorMsg =				{ fg = calvera.error }, -- error messages
 		Folded =				{ fg = calvera.disabled, bg = calvera.none, style = 'italic' }, -- line used for closed folds
 		FoldColumn =			{ fg = calvera.blue }, -- 'foldcolumn'
-		IncSearch =				{ fg = calvera.highlight, bg = calvera.title, style = 'reverse' }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+		IncSearch =				{ fg = calvera.highlight, bg = calvera.white, style = 'reverse' }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		LineNr =				{ fg = calvera.line_numbers }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
 		CursorLineNr =			{ fg = calvera.accent }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		MatchParen =			{ fg = calvera.yellow, bg = calvera.none, style = 'bold' }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -120,7 +120,7 @@ theme.loadEditor = function ()
 		Question =				{ fg = calvera.green }, -- |hit-enter| prompt and yes/no questions
 		QuickFixLine =			{ fg = calvera.highlight, bg = calvera.title, style = 'reverse' }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		qfLineNr =				{ fg = calvera.highlight, bg = calvera.title, style = 'reverse' }, -- Line numbers for quickfix lists
-		Search =				{ fg = calvera.highlight, bg = calvera.title, style = 'reverse' }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
+		Search =				{ fg = calvera.highlight, bg = calvera.white, style = 'reverse' }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
 		SpecialKey =			{ fg = calvera.purple }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
 		SpellBad =				{ fg = calvera.red, bg = calvera.none, style = 'italic,undercurl' }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
 		SpellCap =				{ fg = calvera.blue, bg = calvera.none, style = 'italic,undercurl' }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
