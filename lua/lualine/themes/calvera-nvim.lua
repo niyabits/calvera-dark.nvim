@@ -3,7 +3,7 @@ local colors = require('calvera.colors')
 local calvera = {}
 
 calvera.normal = {
-    a = {fg = colors.bg, bg = colors.accent, gui = 'bold'},
+    a = {fg = colors.bg, bg = colors.blue, gui = 'bold'},
     b = {fg = colors.title, bg = colors.active},
     c = {fg = colors.fg, bg = colors.selection}
 }
