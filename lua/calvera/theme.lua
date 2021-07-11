@@ -140,7 +140,8 @@ theme.loadEditor = function ()
 		Whitespace =			{ fg = calvera.fg }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		WildMenu =				{ fg = calvera.orange, bg = calvera.none, style = 'bold' }, -- current match in 'wildmenu' completion
 		CursorColumn =			{ fg = calvera.none, bg = calvera.active }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine =			{ fg = calvera.none, bg = calvera.active }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+
+		CursorLine =			{ fg = calvera.none, bg = calvera.cursorLineBG }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		-- ToolbarLine =			{ fg = calvera.fg, bg = calvera.bg_alt },
 		-- ToolbarButton =			{ fg = calvera.fg, bg = calvera.none, style = 'bold' },
 		NormalMode =			{ fg = calvera.accent, bg = calvera.none, style = 'reverse' }, -- Normal mode message in the cmdline
