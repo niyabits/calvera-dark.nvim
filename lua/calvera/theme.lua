@@ -108,7 +108,7 @@ theme.loadEditor = function ()
 		FoldColumn =			{ fg = calvera.blue }, -- 'foldcolumn'
 		IncSearch =				{ fg = calvera.highlight, bg = calvera.white, style = 'reverse' }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
 		LineNr =				{ fg = calvera.line_numbers }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-		CursorLineNr =			{ fg = calvera.accent }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+		CursorLineNr =			{ fg = calvera.white }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		MatchParen =			{ fg = calvera.yellow, bg = calvera.none, style = 'bold' }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg =				{ fg = calvera.accent }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MoreMsg =				{ fg = calvera.accent }, -- |more-prompt|

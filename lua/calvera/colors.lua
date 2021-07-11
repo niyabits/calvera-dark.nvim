@@ -73,6 +73,7 @@ if vim.g.calvera_transparentbg == true then
     calvera.bg = 'NONE'
     calvera.comments = '#A7ACC9'
     calvera.cursorLineBG = 'NONE'
+    calvera.line_numbers = calvera.gray
 end
 
 -- Set black titles for lighter style
