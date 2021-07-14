@@ -113,6 +113,7 @@ require('lualine').setup {
 | calvera_hide_eob                    | `false`     | Hide the end of buffer lines ( ~ )                                                               |
 | calvera_variable_color              | `#717CB4`   | Set a custom color for variables and fields                                                      |
 | calvera_custom_colors               |    {}       | Override the default colors and use your own                                                     |
+| calvera_transparent_bg               | `false`     | Transparent Background                                                                           |
 
 
 
@@ -126,6 +127,7 @@ vim.g.calvera_italic_variables = false
 vim.g.calvera_contrast = true
 vim.g.calvera_borders = false
 vim.g.calvera_disable_background = false
+vim.g.transparent_bg = true
 --vim.g.calvera_custom_colors = { black = "#000000", bg = "#0F111A" }
 
 -- Load the colorscheme

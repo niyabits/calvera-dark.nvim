@@ -69,7 +69,7 @@ else
 end
 
 -- Set BG Transparent
-if vim.g.calvera_transparentbg == true then
+if vim.g.calvera_transparent_bg == true then
     calvera.bg = 'NONE'
     calvera.comments = '#A7ACC9'
     calvera.cursorLineBG = 'NONE'
