@@ -47,6 +47,7 @@ calvera.popupbgActive = '#29294e'
 calvera.refTextBg = '#03385B'
 calvera.refTextFg = '#AAAFDF'
 calvera.nvimTreeTxt = '#474775'
+calvera.cursorLineBG = calvera.active
 -- Optional colors
 
 -- LuaFormatter on
@@ -65,6 +66,14 @@ if vim.g.calvera_variable_color == nil then
     calvera.variable = calvera.paleblue
 else
     calvera.variable = vim.g.calvera_variable_color
+end
+
+-- Set BG Transparent
+if vim.g.calvera_transparent_bg == true then
+    calvera.bg = 'NONE'
+    calvera.comments = '#A7ACC9'
+    calvera.cursorLineBG = 'NONE'
+    calvera.line_numbers = calvera.gray
 end
 
 -- Set black titles for lighter style

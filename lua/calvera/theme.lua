@@ -107,8 +107,8 @@ theme.loadEditor = function ()
 		Folded =				{ fg = calvera.disabled, bg = calvera.none, style = 'italic' }, -- line used for closed folds
 		FoldColumn =			{ fg = calvera.blue }, -- 'foldcolumn'
 		IncSearch =				{ fg = calvera.highlight, bg = calvera.white, style = 'reverse' }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-		LineNr =				{ fg = calvera.line_numbers }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-		CursorLineNr =			{ fg = calvera.accent }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+		LineNr =				{ fg = calvera.accent }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+		CursorLineNr =			{ fg = calvera.blue }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 		MatchParen =			{ fg = calvera.yellow, bg = calvera.none, style = 'bold' }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
 		ModeMsg =				{ fg = calvera.accent }, -- 'showmode' message (e.g., "-- INSERT -- ")
 		MoreMsg =				{ fg = calvera.accent }, -- |more-prompt|
@@ -140,7 +140,8 @@ theme.loadEditor = function ()
 		Whitespace =			{ fg = calvera.fg }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
 		WildMenu =				{ fg = calvera.orange, bg = calvera.none, style = 'bold' }, -- current match in 'wildmenu' completion
 		CursorColumn =			{ fg = calvera.none, bg = calvera.active }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine =			{ fg = calvera.none, bg = calvera.active }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+
+		CursorLine =			{ fg = calvera.none, bg = calvera.cursorLineBG }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		-- ToolbarLine =			{ fg = calvera.fg, bg = calvera.bg_alt },
 		-- ToolbarButton =			{ fg = calvera.fg, bg = calvera.none, style = 'bold' },
 		NormalMode =			{ fg = calvera.accent, bg = calvera.none, style = 'reverse' }, -- Normal mode message in the cmdline
