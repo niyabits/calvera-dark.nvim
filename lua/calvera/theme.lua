@@ -413,10 +413,10 @@ theme.loadPlugins = function()
         LspDiagnosticsHint =                    { fg = calvera.purple },
 
         -- WhichKey
-        WhichKey =                              { fg = calvera.accent , style = 'bold'},
+        WhichKey =                              { fg = calvera.blue , style = 'bold'},
         WhichKeyGroup =                         { fg = calvera.text },
-        WhichKeyDesc =                          { fg = calvera.blue, style = 'italic' },
-        WhichKeySeperator =                     { fg = calvera.fg },
+        WhichKeyDesc =                          { fg = calvera.cyan, style = 'italic' },
+        WhichKeySeperator =                     { fg = calvera.accent },
         WhichKeyFloating =                      { bg = calvera.float },
         WhichKeyFloat =                         { bg = calvera.float },
 
