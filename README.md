@@ -76,6 +76,7 @@ A port of [Calvera Dark](https://github.com/saurabhdaware/vscode-calvera-dark) c
     + [Lualine](https://github.com/hoob3rt/lualine.nvim)
     + [Neogit](https://github.com/TimUntersberger/neogit)
     + [vim-sneak](https://github.com/justinmk/vim-sneak)
+	+ [hop.nvim](https://github.com/phaazon/hop.nvim)
     + [nvim-dap](https://github.com/mfussenegger/nvim-dap)
     + [vim-illuminate](https://github.com/RRethy/vim-illuminate)
 
