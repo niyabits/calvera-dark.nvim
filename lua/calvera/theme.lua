@@ -473,6 +473,12 @@ theme.loadPlugins = function()
 		-- Illuminate
 		illuminatedWord =						{ bg = calvera.highight },
 		illuminatedCurWord =					{ bg = calvera.highight },
+
+		-- Hop
+		HopNextKey = 							{ fg = calvera.orange, style = "bold" },
+		HopNextKey1 = 							{ fg = calvera.blue, style = "bold" },
+		HopNextKey2 = 							{ fg = calvera.blue },
+		HopUnmatched = 							{ fg = calvera.comments },
     }
     -- Options:
 
