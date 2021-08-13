@@ -119,7 +119,6 @@ require('lualine').setup {
 
 ```lua
 -- Example config in lua
-vim.g.calvera_style = 'deep ocean'
 vim.g.calvera_italic_comments = true
 vim.g.calvera_italic_keywords = true
 vim.g.calvera_italic_functions = true
