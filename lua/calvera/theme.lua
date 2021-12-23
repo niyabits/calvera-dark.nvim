@@ -130,9 +130,9 @@ theme.loadEditor = function ()
 		StatusLineNC =  		{ fg = calvera.fg, bg = calvera.bg }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 		StatusLineTerm =		{ fg = calvera.fg, bg = calvera.active }, -- status line of current terminal window
 		StatusLineTermNC =		{ fg = calvera.text, bg = calvera.bg }, -- status lines of not-current terminal windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-		TabLineFill =			{ fg = calvera.fg }, -- tab pages line, where there are no labels
+		TabLineFill =			{ fg = calvera.fg, bg = calvera.none }, -- tab pages line, where there are no labels
 		TablineSel =			{ fg = calvera.bg, bg = calvera.accent }, -- tab pages line, active tab page label
-		Tabline =				{ fg = calvera.fg },
+		Tabline =				{ fg = calvera.fg, bg = calvera.bg },
 		Title =					{ fg = calvera.title, bg = calvera.none, style = 'bold' }, -- titles for output from ":set all", ":autocmd" etc.
 		Visual =				{ fg = calvera.none, bg = calvera.selection }, -- Visual mode selection
 		VisualNOS =				{ fg = calvera.none, bg = calvera.selection }, -- Visual mode selection when vim is "Not Owning the Selection".
